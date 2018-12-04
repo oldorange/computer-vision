@@ -7,18 +7,11 @@ import cv2
 face_detector = dlib.get_frontal_face_detector()
 
 win = dlib.image_window()
-	        
-# Wait until the user hits <enter> to close the window	        
-dlib.hit_enter_to_continue()
-
-
 
 def detect(gray, frame):
     detected_faces = face_detector(frame, 1)
     print("I found {} faces".format(len(detected_faces)))
     return detected_faces
-
-
 
 video_capture = cv2.VideoCapture(0)
 try:
