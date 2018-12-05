@@ -3,18 +3,6 @@
 
 # Face Recognition with OpenCV
 
-# To detect faces, I will use the code from my previous article on [face detection](https://www.superdatascience.com/opencv-face-detection/). So if you have not read it, I encourage you to do so to understand how face detection works and its Python coding. 
-
-# ### Import Required Modules
-
-# Before starting the actual coding we need to import the required modules for coding. So let's import them first. 
-# 
-# - **cv2:** is _OpenCV_ module for Python which we will use for face detection and face recognition.
-# - **os:** We will use this Python module to read our training directories and file names.
-# - **numpy:** We will use this module to convert Python lists to numpy arrays as OpenCV face recognizers accept numpy arrays.
-
-# In[1]:
-
 #import OpenCV module
 import cv2
 #import os module for reading training data directories and paths
@@ -25,12 +13,6 @@ import numpy as np
 
 
 # ### Training Data
-
-# The more images used in training the better. Normally a lot of images are used for training a face recognizer so that it can learn different looks of the same person, for example with glasses, without glasses, laughing, sad, happy, crying, with beard, without beard etc. To keep our tutorial simple we are going to use only 12 images for each person. 
-# 
-# So our training data consists of total 2 persons with 12 images of each person. All training data is inside _`training-data`_ folder. _`training-data`_ folder contains one folder for each person and **each folder is named with format `sLabel (e.g. s1, s2)` where label is actually the integer label assigned to that person**. For example folder named s1 means that this folder contains images for person 1. The directory structure tree for training data is as follows:
-# 
-# ```
 # training-data
 # |-------------- s1
 # |               |-- 1.jpg
@@ -40,19 +22,11 @@ import numpy as np
 # |               |-- 1.jpg
 # |               |-- ...
 # |               |-- 12.jpg
-# ```
-# 
-# The _`test-data`_ folder contains images that we will use to test our face recognizer after it has been successfully trained.
-
-# As OpenCV face recognizer accepts labels as integers so we need to define a mapping between integer labels and persons actual names so below I am defining a mapping of persons integer labels and their respective names. 
-# 
 # **Note:** As we have not assigned `label 0` to any person so **the mapping for label 0 is empty**. 
 
 # In[2]:
-
 #there is no label 0 in our training data so subject name for index/label 0 is empty
 subjects = ["", "Ramiz Raja", "Elvis Presley"]
-
 
 # ### Prepare training data
 
