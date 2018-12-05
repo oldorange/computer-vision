@@ -4,3 +4,4 @@ Module_1_Face_Recognition/example_submission.csv
 Module_1_Face_Recognition/fer2013/fer2013.csv
 Module_1_Face_Recognition/fer2013/fer2013.bib
 Module_1_Face_Recognition/fer2013/README
+face_alignment/shape_predictor_68_face_landmarks.dat
